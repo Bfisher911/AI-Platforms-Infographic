@@ -1,0 +1,220 @@
+:root {
+    --primary-color: #007bff;
+    --primary-hover-color: #0056b3;
+    --background-color: #f8f9fa;
+    --text-color: #212529;
+    --border-color: #dee2e6;
+    --header-bg-color: #e9ecef;
+    --table-stripe-color: #f1f3f5;
+    --font-family: 'Inter', sans-serif;
+    --card-bg: #ffffff;
+    --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+body {
+    font-family: var(--font-family);
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    background-color: var(--background-color);
+    color: var(--text-color);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+#root {
+    padding: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.container {
+    background-color: var(--card-bg);
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: var(--shadow);
+}
+
+h1 {
+    color: var(--primary-color);
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 2.5rem;
+    font-weight: 700;
+}
+
+.intro-text {
+    font-size: 1.1rem;
+    margin-bottom: 30px;
+    text-align: center;
+    color: #495057;
+}
+
+.accordion-item {
+    background-color: var(--card-bg);
+    margin-bottom: 15px;
+    border: 1px solid var(--border-color);
+    border-radius: 6px;
+    overflow: hidden;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+}
+
+.accordion-header {
+    background-color: var(--header-bg-color);
+    color: var(--text-color);
+    cursor: pointer;
+    padding: 15px 20px;
+    width: 100%;
+    border: none;
+    text-align: left;
+    outline: none;
+    font-size: 1.25rem;
+    font-weight: 600;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: background-color 0.3s ease;
+}
+
+.accordion-header:hover {
+    background-color: #d3d9df;
+}
+
+.accordion-icon {
+    font-size: 1.5rem;
+    font-weight: bold;
+    transition: transform 0.3s ease;
+}
+
+.accordion-header[aria-expanded="true"] .accordion-icon {
+    transform: rotate(45deg);
+}
+
+
+.accordion-content {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.5s ease-out, padding 0.3s ease-out;
+    background-color: var(--card-bg);
+    padding: 0 20px;
+}
+
+.accordion-content.open {
+    max-height: 2000px; /* Adjust as needed for content */
+    padding: 20px;
+    border-top: 1px solid var(--border-color);
+}
+
+.table-container {
+    overflow-x: auto; /* Allows table to scroll horizontally on small screens */
+    margin-bottom: 10px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+}
+
+th, td {
+    text-align: left;
+    padding: 12px 15px;
+    border: 1px solid var(--border-color);
+}
+
+th {
+    background-color: var(--primary-color);
+    color: white;
+    font-weight: 600;
+    white-space: nowrap;
+}
+
+tbody tr:nth-of-type(even) {
+    background-color: var(--table-stripe-color);
+}
+
+tbody tr:hover {
+    background-color: #e2e6ea;
+}
+
+td a {
+    color: var(--primary-color);
+    text-decoration: none;
+    font-weight: 500;
+}
+
+td a:hover {
+    color: var(--primary-hover-color);
+    text-decoration: underline;
+}
+
+.sources-note {
+    font-style: italic;
+    font-size: 0.9rem;
+    color: #6c757d;
+    margin-top: 10px;
+    text-align: right;
+}
+
+.how-to-use-section {
+    margin-top: 40px;
+    padding: 20px;
+    background-color: var(--header-bg-color);
+    border-radius: 6px;
+}
+
+.how-to-use-section h2 {
+    color: var(--primary-color);
+    margin-top: 0;
+    font-size: 1.8rem;
+    font-weight: 600;
+}
+
+.how-to-use-section ol {
+    padding-left: 20px;
+}
+
+.how-to-use-section li {
+    margin-bottom: 10px;
+    font-size: 1rem;
+}
+
+.final-note {
+    margin-top: 20px;
+    padding: 15px;
+    background-color: #fff3cd;
+    border: 1px solid #ffeeba;
+    color: #856404;
+    border-radius: 4px;
+}
+
+.final-note p {
+    margin: 0;
+}
+
+footer {
+    text-align: center;
+    margin-top: 40px;
+    padding: 20px;
+    font-size: 0.9rem;
+    color: #6c757d;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    h1 {
+        font-size: 2rem;
+    }
+    .accordion-header {
+        font-size: 1.1rem;
+    }
+    th, td {
+        padding: 8px 10px;
+        font-size: 0.9rem;
+    }
+    /* 
+      For very small screens, if horizontal scrolling is not enough,
+      you might consider a card-based layout for table rows.
+      This example keeps horizontal scroll for simplicity.
+    */
+}
